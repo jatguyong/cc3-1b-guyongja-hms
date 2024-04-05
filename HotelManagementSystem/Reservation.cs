@@ -12,6 +12,17 @@ namespace HotelManagementSystem
         public DateTime startTime;
         public DateTime endTime;
         public int duration;
+        public HotelRoom room;
+
+        public Reservation(DateTime startTime, DateTime endTime, HotelRoom room)
+        {
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.room = room;
+
+            TimeSpan timeDifference = endTime - startTime;
+            this.duration = timeDifference.Hours;
+        }
 
         public void GetDetails()
         {

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace HotelManagementSystem
 {
-    public class System
+    public enum RoomStyle
     {
-        public void Register()
-        {
-
-        }
+        TwinRoom,
+        QueenRoom,
+        KingRoom
     }
 }
