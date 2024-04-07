@@ -12,31 +12,11 @@ namespace HotelManagementSystem
         {
         }
 
-        public void CreateBooking()
-        {
-
-        }
-
         public void BookReservation(Guest guest, Reservation reservation)
         {
-            if (hotel == null)
-            {
-                Console.WriteLine("Error: Hotel not found.");
-                return;
-            }
-
-            if (!hotel.IsRoomAvailable(room.RoomNumber, startTime, endTime))
-            {
-                Console.WriteLine($"Room {room.RoomNumber} is not available for the specified duration.");
-                return;
-            }
-
-            Reservation reservation = hotel.BookRoom(room, startTime, endTime);
-            if (reservation != null)
-            {
-                guest.AddReservation(reservation);
-                Console.WriteLine($"Reservation booked for {guest.Name} by {Name}.");
-            }
+            // Here you can implement the logic for booking a reservation by a receptionist.
+            guest.CreateReservation(reservation);
+            Console.WriteLine($"Reservation booked for {guest.Name} by {Name}.");
         }
     }
 }

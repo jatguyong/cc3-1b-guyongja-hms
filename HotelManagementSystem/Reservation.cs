@@ -8,25 +8,22 @@ namespace HotelManagementSystem
 {
     public class Reservation
     {
-        public int reservationNum;
-        public DateTime startTime;
-        public DateTime endTime;
-        public int duration;
-        public HotelRoom room;
+        public static int reservationCount = 1234567890;
+        public int ReservationNum {  get; }
+        public DateTime StartTime {  get; }
+        public DateTime EndTime {  get; }
+        public int Duration {  get; }
+        public HotelRoom Room {  get; }
 
         public Reservation(DateTime startTime, DateTime endTime, HotelRoom room)
         {
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.room = room;
+            ReservationNum = reservationCount++;
+            StartTime = startTime;
+            EndTime = endTime;
+            Room = room;
 
             TimeSpan timeDifference = endTime - startTime;
-            this.duration = timeDifference.Hours;
-        }
-
-        public void GetDetails()
-        {
-            // {Make} {Model} ({Year}) - Registration: {RegistrationNumber}, Rent Price: {RentalPricePerDay} per day"
+            Duration = timeDifference.Days;
         }
     }
 }

@@ -8,7 +8,6 @@ namespace HotelManagementSystem
 {
     public class Guest : User
     {
-        public int totalNumberOfRooms;
         public List<Reservation> ReservationsList {  get; set; }
 
         public Guest(string name, string address, string email, int phoneNumber) : base(name, address, email, phoneNumber)
@@ -26,7 +25,7 @@ namespace HotelManagementSystem
             Console.WriteLine($"List of Reservations of {Name}:");
             foreach (Reservation reservation in ReservationsList)
             {
-                Console.WriteLine($"  {reservation.reservationNum} Start Time: {reservation.startTime}, End Time: {reservation.endTime}, Duration: {reservation.duration}, Total: {reservation.total}");
+                Console.WriteLine($"  {reservation.ReservationNum} Start Time: {reservation.StartTime}, End Time: {reservation.EndTime}, Duration: {reservation.Duration}, Total: {reservation.Room.bookingPrice}");
             }
         }
     }
