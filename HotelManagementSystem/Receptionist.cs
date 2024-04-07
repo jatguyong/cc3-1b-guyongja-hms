@@ -14,9 +14,7 @@ namespace HotelManagementSystem
 
         public void BookReservation(Guest guest, Reservation reservation)
         {
-            // Here you can implement the logic for booking a reservation by a receptionist.
-            guest.CreateReservation(reservation);
-            Console.WriteLine($"Reservation booked for {guest.Name} by {Name}.");
+            guest.ReservationsList.Add(reservation);
         }
     }
 }

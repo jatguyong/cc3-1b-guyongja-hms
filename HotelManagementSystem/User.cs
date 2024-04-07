@@ -21,10 +21,5 @@ namespace HotelManagementSystem
             Email = email;
             PhoneNumber = phoneNumber;
         }
-
-        public void Register(string name, string address, string email, int phoneNumber)
-        {
-            // register a user
-        }
     }
 }

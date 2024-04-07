@@ -11,14 +11,14 @@ namespace HotelManagementSystem
     {
         public string Name {  get; set; }
         public string Location {  get; set; }
-        public List<HotelRoom> Rooms { get; set; }
+        public List<HotelRoom> RoomsList { get; set; }
         public List<HotelRoom> _availableRooms;
-
+        
         public Hotel(string name, string location, List<HotelRoom> rooms)
         {
             Name = name;
             Location = location;
-            Rooms = rooms;
+            RoomsList = rooms;
             _availableRooms = new List<HotelRoom>(rooms);
         }
 
@@ -34,24 +34,17 @@ namespace HotelManagementSystem
         public void DisplayBookedRooms()
         {
             Console.WriteLine($"Hotel {Name} - Booked Rooms");
+            foreach (var room in _availableRooms)
+            {
+                Console.WriteLine($"  Room {room.RoomNumber}, Style: {room.RoomStyle}, Price: {room.bookingPrice}");
+            }
         }
 
         public Reservation BookRoom(Guest guest, HotelRoom room, DateTime startTime, DateTime endTime)
         {
-            if (!IsRoomAvailable(room, startTime, endTime))
-            {
-                Console.WriteLine($"Room {room.RoomNumber} is not available for the specified duration.");
-                return null;
-            }
-
             Reservation reservation = new Reservation(startTime, endTime, room);
-            guest.CreateReservation(reservation);
+            guest.ReservationsList.Add(reservation);
             return reservation;
-        }
-
-        private bool IsRoomAvailable(HotelRoom room, DateTime startTime, DateTime endTime)
-        {
-            return true;
         }
     }
 }

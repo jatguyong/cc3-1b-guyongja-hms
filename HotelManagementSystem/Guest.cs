@@ -15,10 +15,12 @@ namespace HotelManagementSystem
             ReservationsList = new List<Reservation>();
         }
 
-        public void CreateReservation(Reservation reservation)
-        {
-            ReservationsList.Add(reservation);
-        }
+        //public void CreateReservation(Hotel hotel, HotelRoom room, DateTime startTime, DateTime endTime)
+        //{
+        //    Reservation reservation = new Reservation(startTime, endTime, room);
+        //    hotel.ReservationsList.Add(reservation);
+        //    ReservationsList.Add(reservation);
+        //}
 
         public void DisplayReservations()
         {

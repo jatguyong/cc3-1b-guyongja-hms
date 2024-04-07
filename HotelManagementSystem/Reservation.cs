@@ -22,8 +22,12 @@ namespace HotelManagementSystem
             EndTime = endTime;
             Room = room;
 
-            TimeSpan timeDifference = endTime - startTime;
-            Duration = timeDifference.Days;
+            Duration = (endTime - startTime).Days;
+        }
+
+        public int TotalPrice()
+        {
+            return Duration * Room.bookingPrice;
         }
     }
 }
